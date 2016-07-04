@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block tags %}
+    <script>
+    {%  include "tags/account-transactions.js" %}
+    {%  include "tags/account-accounts.js" %}
+    </script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="o-container o-container--super">
+        <div class="o-grid o-grid--small-fit o-grid--medium-fit o-grid--large-full">
+            <account-transactions></account-transactions>
+            <account-accounts></account-accounts>
+        </div>
+    </div>
+{% endblock %}
+
+{%  block body_script %}
+<script>
+    riot.mount('*')
+</script>
+{%  endblock %}

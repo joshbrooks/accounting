@@ -1,0 +1,7 @@
+{
+  "capital":{{capital}},
+  "asset":{{asset}},
+  "debit":{{debit}},
+  "revenue":{{revenue}},
+  "liability":{{liability}}
+}

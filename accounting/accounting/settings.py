@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fa#@5#2&2asw_#^#qu6lt+ed_$anys$__o&p@eg41_!uj554)('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'django_extensions',
+    'debug_toolbar',
+
+    'easy_account.apps.EasyAccountConfig',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,3 +125,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    # os.path.join(os.path.dirname(BASE_DIR), 'static', ),
+    # os.path.join(os.path.dirname(BASE_DIR), 'bower_components', ),
+    os.path.join(os.path.dirname(BASE_DIR), 'node_modules', ),
+)
+
+
+try:
+    from local_settings import *
+except ImportError:
+    raise
