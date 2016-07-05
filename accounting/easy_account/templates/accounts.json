@@ -3,5 +3,5 @@
   "asset":{{asset}},
   "debit":{{debit}},
   "revenue":{{revenue}},
-  "liability":{{liability}}
+  "liability":{{liability}},
 }
