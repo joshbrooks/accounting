@@ -35,42 +35,45 @@ class Account(models.Model):
     def __unicode__(self):
         return self.name
 
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
     name = models.TextField(unique=True)
     currency = models.TextField(max_length=5, default="USD")
 
 
 class Capital(Account):
 
+    account = models.OneToOneField('Account', parent_link=True)
     openingbalance = models.DecimalField(max_digits=20, decimal_places=2)
     estimatedbalance = models.DecimalField(max_digits=20, decimal_places=2) # Running total of cash value
+
 
 
 class Asset(Account):
     """
     Asset
     """
-    pass
+    account = models.OneToOneField('Account', parent_link=True)
 
 
 class Debit(Account):
     """
     A category describing where money is spent
     """
-    pass
+    account = models.OneToOneField('Account', parent_link=True)
 
 
 class Revenue(Account):
     """
     A category describing where money is earned from
     """
-    pass
+    account = models.OneToOneField('Account', parent_link=True)
 
 
 class Liability(Account):
     """
     Loans etc
     """
-    pass
+    account = models.OneToOneField('Account', parent_link=True)
 
 
 class BalanceCheck(models.Model):

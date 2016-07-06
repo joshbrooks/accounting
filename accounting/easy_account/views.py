@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.utils.safestring import mark_safe
 from django.views.generic import TemplateView
 from rest_framework.renderers import JSONRenderer
 
@@ -26,7 +27,8 @@ class AccountList(TemplateView):
     def get_context_data(self, **kwargs):
 
         def _r(serializer):
-            return  JSONRenderer().render(serializer.data)
+            # return  JSONRenderer().render(serializer.data)
+            return  mark_safe(JSONRenderer().render(serializer.data))
 
         return {
             'capital' : _r(CapitalSerializer(Capital.objects.all(), many=True)),
