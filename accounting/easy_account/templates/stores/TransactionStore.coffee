@@ -2,24 +2,44 @@ modelName = 'project'
 appName = 'projecttracker'
 
 
-window.TransactionStore = (transactions) ->
+window.TransactionStore = () ->
 
-  riot.observable @
-  @transactions = transactions || []
-  @edit = {} # Store the Person currently being edited
-  @filters = ''
+  riot.observable(this)
+  console.log 'created TransactionStore'
+  self = this
+  self.transactions = []
+  self.on 'transactions_fetch', () ->
+    # TODO: Make an HTTP request to get latest accounts
 
-  ### Request the latest projects from DRF ###
-  @on 'transaction_list_load', (opts)->
-    opts = opts or {}
-    page = opts.page or 1
-    per_page = opts.per_page or 100
-    filters = opts.filters or ''
-    self.filters = filters
-    # TODO: Patch up and Implement the "RequestStore" mechanics from onlineoffline
+    self.transactions = [
+        {
+            from_account: 'ANZ Bank'
+            to_account: 'Mandiri'
+            name: 'My transaction'
+            description: 'Description'
+            time: '2017-08-02 22:54'
+            amt: '20.53'
+        },
+        {
+            from_account: 'ANZ Bank'
+            to_account: 'Mandiri'
+            name: 'My transaction'
+            description: 'Description'
+            time: '2017-08-02 22:54'
+            amt: '20.53'
+        }
+    ]
+    RiotControl.trigger('transactions_update')
 
-  @on 'ping', ->
-    alert 'ping'
+    xhr = $.getJSON('/transactions')
+    xhr.done () ->
+      self.store.transactions = xhr.responseJSON
+      RiotControl.trigger('transactions_update')
 
-  @on 'tag_selected', (e) ->
-    console.log e
+  self.on 'transactions_init', () ->
+    console.log 'triggered transactions_init'
+    self.trigger 'transactions_changed'
+
+  self.on 'transaction_add', (transaction) ->
+    self.accounts.category.push(transaction)
+    self.trigger 'transactions_changed', transaction

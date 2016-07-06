@@ -4,9 +4,16 @@
 
 {% block tags %}
     <script>
+    {%  include "stores/TransactionStore.js" %}
+    </script>
+    <script>
+    {%  include "stores/AccountStore.js" %}
+    </script>
+    <script>
     {%  include "tags/account-transactions.js" %}
+    </script>
+    <script>
     {%  include "tags/account-accounts.js" %}
-{#    {%  include "stores/AccountStore.js" %}#}
     </script>
 {% endblock %}
 

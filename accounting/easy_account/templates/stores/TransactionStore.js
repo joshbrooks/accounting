@@ -6,27 +6,48 @@
 
   appName = 'projecttracker';
 
-  window.TransactionStore = function(transactions) {
+  window.TransactionStore = function() {
+    var self;
     riot.observable(this);
-    this.transactions = transactions || [];
-    this.edit = {};
-    this.filters = '';
-
-    /* Request the latest projects from DRF */
-    this.on('transaction_list_load', function(opts) {
-      var filters, page, per_page;
-      opts = opts || {};
-      page = opts.page || 1;
-      per_page = opts.per_page || 100;
-      filters = opts.filters || '';
-      return self.filters = filters;
+    console.log('created TransactionStore');
+    self = this;
+    self.transactions = [];
+    self.on('transactions_fetch', function() {
+      var xhr;
+      self.transactions = [
+        {
+          from_account: 'ANZ Bank',
+          to_account: 'Mandiri',
+          name: 'My transaction',
+          description: 'Description',
+          time: '2017-08-02 22:54',
+          amt: '20.53'
+        }, {
+          from_account: 'ANZ Bank',
+          to_account: 'Mandiri',
+          name: 'My transaction',
+          description: 'Description',
+          time: '2017-08-02 22:54',
+          amt: '20.53'
+        }
+      ];
+      RiotControl.trigger('transactions_update');
+      xhr = $.getJSON('/transactions');
+      return xhr.done(function() {
+        self.store.transactions = xhr.responseJSON;
+        return RiotControl.trigger('transactions_update');
+      });
     });
-    this.on('ping', function() {
-      return alert('ping');
+    self.on('transactions_init', function() {
+      console.log('triggered transactions_init');
+      return self.trigger('transactions_changed');
     });
-    return this.on('tag_selected', function(e) {
-      return console.log(e);
+    return self.on('transaction_add', function(transaction) {
+      self.accounts.category.push(transaction);
+      return self.trigger('transactions_changed', transaction);
     });
   };
 
 }).call(this);
+
+//# sourceMappingURL=TransactionStore.js.map

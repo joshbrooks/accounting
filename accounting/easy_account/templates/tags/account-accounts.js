@@ -1,34 +1,4 @@
 riot.tag2('account-accounts', '<div> <div class="c-card c-card--higher"> <virtual each="{account_type in accountstore.accounts}"> <div class="c-card__content c-card__content--divider heading">{account_type}</div> <div class="c-card__item" each="{account in accountstore.accounts[account_type]}"> <div class="o-grid account-account"> <div class="o-grid__cell o-grid__cell--width-30"><span class="account-name">{account.name}</span></div> <div class="o-grid__cell o-grid__cell--width-30"><span class="fa fa-dollar"></span>{account.openingbalance}</div> <div class="o-grid__cell o-grid__cell--width-40"> <span> <button class="c-button c-button--ghost-success fa fa-arrow-circle-down" onclick="{ping}"> </button> <button class="c-button c-button--ghost-error fa fa-arrow-circle-up"></button> <button class="c-button c-button--ghost-success fa fa-edit" onclick="{edit_account}"> </button> </span> </div> </div> </div> </virtual> </div> </div>', 'account-accounts .menu,[riot-tag="account-accounts"] .menu,[data-is="account-accounts"] .menu{ position: absolute; }', 'class="o-grid__cell o-grid__cell--width-40"', function(opts) {
-var AccountStore;
-
-AccountStore = function() {
-  var self;
-  riot.observable(this);
-  if (JS_LOG_LEVEL < 2) {
-    console.log('created AccountStore');
-  }
-  self = this;
-  self.accounts = [];
-  self.on('accounts_fetch', function() {
-    var xhr;
-    xhr = $.getJSON('/accounts');
-    return xhr.done(function() {
-      self.accounts = xhr.responseJSON;
-      return RiotControl.trigger('accounts_update');
-    });
-  });
-  self.on('accounts_init', function() {
-    if (JS_LOG_LEVEL < 2) {
-      console.log('triggered accounts_init');
-    }
-    return self.trigger('accounts_changed', self.accounts);
-  });
-  return self.on('account_add', function(account, category) {
-    self.accounts.category.push(account);
-    return self.trigger('accounts_changed', accounts);
-  });
-};
-
 var JS_LOG_LEVEL, self;
 
 self = this;
