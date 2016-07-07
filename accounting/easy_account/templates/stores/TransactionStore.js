@@ -14,27 +14,9 @@
     self.transactions = [];
     self.on('transactions_fetch', function() {
       var xhr;
-      self.transactions = [
-        {
-          from_account: 'ANZ Bank',
-          to_account: 'Mandiri',
-          name: 'My transaction',
-          description: 'Description',
-          time: '2017-08-02 22:54',
-          amt: '20.53'
-        }, {
-          from_account: 'ANZ Bank',
-          to_account: 'Mandiri',
-          name: 'My transaction',
-          description: 'Description',
-          time: '2017-08-02 22:54',
-          amt: '20.53'
-        }
-      ];
-      RiotControl.trigger('transactions_update');
-      xhr = $.getJSON('/transactions');
+      xhr = $.getJSON('/transactions?format=json');
       return xhr.done(function() {
-        self.store.transactions = xhr.responseJSON;
+        self.transactions = xhr.responseJSON;
         return RiotControl.trigger('transactions_update');
       });
     });

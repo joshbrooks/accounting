@@ -3,9 +3,6 @@
   window.AccountStore = function() {
     var self;
     riot.observable(this);
-    if (JS_LOG_LEVEL < 2) {
-      console.log('created AccountStore');
-    }
     self = this;
     self.accounts = [];
     self.on('accounts_fetch', function() {

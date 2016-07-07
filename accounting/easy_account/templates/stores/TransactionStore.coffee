@@ -9,31 +9,10 @@ window.TransactionStore = () ->
   self = this
   self.transactions = []
   self.on 'transactions_fetch', () ->
-    # TODO: Make an HTTP request to get latest accounts
 
-    self.transactions = [
-        {
-            from_account: 'ANZ Bank'
-            to_account: 'Mandiri'
-            name: 'My transaction'
-            description: 'Description'
-            time: '2017-08-02 22:54'
-            amt: '20.53'
-        },
-        {
-            from_account: 'ANZ Bank'
-            to_account: 'Mandiri'
-            name: 'My transaction'
-            description: 'Description'
-            time: '2017-08-02 22:54'
-            amt: '20.53'
-        }
-    ]
-    RiotControl.trigger('transactions_update')
-
-    xhr = $.getJSON('/transactions')
+    xhr = $.getJSON('/transactions?format=json')
     xhr.done () ->
-      self.store.transactions = xhr.responseJSON
+      self.transactions = xhr.responseJSON
       RiotControl.trigger('transactions_update')
 
   self.on 'transactions_init', () ->

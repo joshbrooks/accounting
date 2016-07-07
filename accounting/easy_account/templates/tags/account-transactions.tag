@@ -5,8 +5,8 @@
             <div class="c-card__item"  each={transaction in store.transactions}>
 
                 <div class="o-grid">
-                    <div class="o-grid__cell o-grid__cell--width-20">{ transaction.from_account }</div>
-                    <div class="o-grid__cell o-grid__cell--width-30"> { transaction.to_account } </div>
+                    <div class="o-grid__cell o-grid__cell--width-20">{ transaction.from_account.name }</div>
+                    <div class="o-grid__cell o-grid__cell--width-30"> { transaction.to_account.name } </div>
                     <div class="o-grid__cell o-grid__cell--width-20">{ transaction.name }</div>
                     <div class="o-grid__cell o-grid__cell--width-20">{ transaction.description }</div>
                     <div class="o-grid__cell o-grid__cell--width-20">{ transaction.time  }</div>
@@ -34,7 +34,8 @@
 
     <script type="text/coffeescript">
         self = this
-        self.store = TransactionStore()
+        self.store = new TransactionStore()
+        window.transactionstore = self.store;
         RiotControl.addStore(self.store)
         self.on 'mount', ->
           RiotControl.trigger('transactions_fetch')

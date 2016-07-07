@@ -1,6 +1,5 @@
 window.AccountStore = () ->
   riot.observable(this)
-  console.log 'created AccountStore' if JS_LOG_LEVEL < 2
   self = this
   self.accounts = []
   self.on 'accounts_fetch', () ->

@@ -5,15 +5,10 @@
 {% block tags %}
     <script>
     {%  include "stores/TransactionStore.js" %}
-    </script>
-    <script>
     {%  include "stores/AccountStore.js" %}
-    </script>
-    <script>
     {%  include "tags/account-transactions.js" %}
-    </script>
-    <script>
     {%  include "tags/account-accounts.js" %}
+    {%  include "tags/create-transaction.js" %}
     </script>
 {% endblock %}
 
@@ -22,6 +17,7 @@
     <div class="o-container o-container--super">
         <div class="o-grid o-grid--small-fit o-grid--medium-fit o-grid--large-full">
             <account-transactions></account-transactions>
+            <create-transaction></create-transaction>
             <account-accounts></account-accounts>
         </div>
     </div>
@@ -29,6 +25,8 @@
 
 {%  block body_script %}
 <script>
-    riot.mount('*')
+    riot.mount('account-accounts');
+    riot.mount('account-transactions')
+    riot.mount('create-transaction')
 </script>
 {%  endblock %}

@@ -44,8 +44,7 @@ class Capital(Account):
 
     account = models.OneToOneField('Account', parent_link=True)
     openingbalance = models.DecimalField(max_digits=20, decimal_places=2)
-    estimatedbalance = models.DecimalField(max_digits=20, decimal_places=2) # Running total of cash value
-
+    balance = models.DecimalField(max_digits=20, decimal_places=2) # Running total of cash value
 
 
 class Asset(Account):
@@ -53,6 +52,7 @@ class Asset(Account):
     Asset
     """
     account = models.OneToOneField('Account', parent_link=True)
+    value = models.DecimalField(max_digits=20, decimal_places=2)
 
 
 class Debit(Account):
@@ -74,6 +74,8 @@ class Liability(Account):
     Loans etc
     """
     account = models.OneToOneField('Account', parent_link=True)
+    balance = models.DecimalField(max_digits=20, decimal_places=2) # Running total of cash value
+    due = models.DateField(null=True,  blank=True)
 
 
 class BalanceCheck(models.Model):
