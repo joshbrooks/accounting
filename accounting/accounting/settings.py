@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import django.conf.locale
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_extensions',
     'debug_toolbar',
+    'django_js_reverse',
 
     'easy_account.apps.EasyAccountConfig',
 ]
@@ -54,6 +57,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'accounting.urls'
@@ -110,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -130,9 +134,36 @@ STATICFILES_DIRS = (
     # os.path.join(os.path.dirname(BASE_DIR), 'static', ),
     # os.path.join(os.path.dirname(BASE_DIR), 'bower_components', ),
     os.path.join(os.path.dirname(BASE_DIR), 'node_modules', ),
+    os.path.join(os.path.dirname(BASE_DIR), 'static', ),
+)
+
+# STATIC_ROOT=os.path.join(os.path.join(os.path.dirname(BASE_DIR),'static'))
+
+LANGUAGES = [
+    ('tet', _('Tetum')),
+    ('en', _('English')),
+]
+
+EXTRA_LANG_INFO = {
+    'tet': {
+        'bidi': False,  # right-to-left
+        'code': 'tet',
+        'name': 'Tetum',
+        'name_local': 'Tetum',  # unicode codepoints here
+    },
+}
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'), os.path.join(BASE_DIR, 'easy_account', 'locale'),
 )
 
 
+# Add custom languages not provided by Django
+# LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+for p in LOCALE_PATHS:
+    print p
+    assert os.path.exists(os.path.join(p, 'tet','LC_MESSAGES'))
 try:
     from local_settings import *
 except ImportError:

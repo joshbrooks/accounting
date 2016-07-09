@@ -15,10 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.views.decorators.cache import cache_page
+from django.views.i18n import javascript_catalog
+from django_js_reverse.views import urls_js
 
+import settings
 from easy_account import urls as easy_account_urls
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include( easy_account_urls, namespace='accounts')),
+    url(r'^jsi18n/(?P<packages>\S+?)/$', javascript_catalog, name='javascript-catalog'),
+    url(r'^jsi18n/$', javascript_catalog, name='javascript-catalog'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
+
+if 'django_js_reverse' in settings.INSTALLED_APPS:
+    urlpatterns += [url(r'^jsreverse/$', cache_page(3600)(urls_js), name='js_reverse')]
+
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [url(r'^rosetta/', include('rosetta.urls'))]

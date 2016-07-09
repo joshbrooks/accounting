@@ -91,5 +91,7 @@ ENV/
 .ropeproject
 
 node_modules/
+static/
 accounting/local_settings.py
 .idea/
+*.mo

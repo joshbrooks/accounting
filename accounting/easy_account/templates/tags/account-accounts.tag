@@ -42,6 +42,9 @@
         self = this
         JS_LOG_LEVEL = window.JS_LOG_LEVEL or 1
         self.on 'mount', ->
+
+          alert(gettext('transaction'))
+
           self.store = new AccountStore()
           window.accountstore = self.store;
           RiotControl.addStore(self.store)

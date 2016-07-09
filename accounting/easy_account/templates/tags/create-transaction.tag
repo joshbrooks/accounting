@@ -3,7 +3,7 @@
 
   <h3>{ opts.title }</h3>
 
-  <form action="{%  url '{url}' %}" onsubmit={ create-transaction }>
+  <form action="action" onsubmit={ create-transaction }>
     <input name="name" placeholder="name">
     <input name="description" placeholder="description">
     <input name="from_account" placeholder="from_account">
@@ -19,8 +19,6 @@
   <!-- this script tag is optional -->
   <script  type="text/coffeescript">
       self = this
-
-      self.url= {% url 'accounts:transactions' %}
 
       self.on 'mount', ->
           return

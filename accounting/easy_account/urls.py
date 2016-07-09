@@ -6,10 +6,10 @@ urlpatterns = [
     url(r'^$',views.DashBoardView.as_view()),
     url(r'^transactions$',views.TransactionList.as_view(), name="transactions"),
 
-    url(r'^accounts$',views.AccountList.as_view()),
+    url(r'^accounts$',views.AccountList.as_view(), name="accounts"),
 
-    url(r'^accounts/capital$', views.CapitalList.as_view()),
-    url(r'^accounts/capital/(?P<pk>[^/]+)/$', views.CapitalDetail.as_view()),
+    url(r'^accounts/capital$', views.CapitalList.as_view(), name='capital_list'),
+    url(r'^accounts/capital/(?P<pk>[^/]+)/$', views.CapitalDetail.as_view(), name='capital_detail'),
 
     url(r'^accounts/asset$', views.AssetList.as_view()),
     url(r'^accounts/asset/(?P<pk>[^/]+)/$', views.AssetDetail.as_view()),

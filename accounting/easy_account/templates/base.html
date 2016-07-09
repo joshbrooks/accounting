@@ -1,4 +1,5 @@
 {%  load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,8 @@
     <script src="{% static 'jquery/dist/jquery.js' %}"></script>
     <script src="{% static 'riot/riot.min.js' %}"></script>
     <script src="{% static 'riotcontrol/riotcontrol.js' %}"></script>
+    <script type="text/javascript" src="{% url 'javascript-catalog' '*' %}"></script>
+    <script src="{% url 'js_reverse' %}" type="text/javascript"></script>
 
 
     <link rel="stylesheet" href="{% static 'blaze/dist/blaze.min.css' %}">
@@ -32,6 +35,26 @@
 		<li class="c-nav__item"><i class="fa fa-star"></i> Library</li>
 		<li class="c-nav__item"><i class="fa fa-star"></i> Donor Mapping</li>
 		<li class="c-nav__item c-nav__item--right"><i class="fa fa-user"></i> Contact</li>
+        <li class="c-nav__item c-nav__item--right">
+
+   <form id="language_form" class="navbar-form navbar-left" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}" />
+        <div class="form-group">
+          <select name="language" id="language_select" class="form-control">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% get_available_languages as LANGUAGES %}
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+            </option>
+            {% endfor %}
+          </select>
+        </div>
+
+      </form>
+        </li>
 	</ul>
 {% block content %}{% endblock content %}
 
