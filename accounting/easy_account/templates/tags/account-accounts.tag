@@ -62,5 +62,11 @@
           $(e.target).parents('.account-account').find('.account-name').css({color:"green"}).replaceWith(replace)
           # TODO: Pop up a modal form with account info
 
+        self.transfer_out = (e) ->
+            RiotControl.trigger('set-transaction-option', 'from_account', e.item.account.id)
+
+        self.transfer_in = (e) ->
+            RiotControl.trigger('set-transaction-option', 'to_account', e.item.account.id)
+
     </script>
 </account-accounts>

@@ -46,7 +46,6 @@
               self.update()
 
         self.edit_transaction = (e) -> return
-        self.create_transaction = (e) -> return
         self.select_transaction = (e) -> return
 
     </script>

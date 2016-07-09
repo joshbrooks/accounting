@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$',views.DashBoardView.as_view()),
-    url(r'^transactions$',views.TransactionList.as_view()),
+    url(r'^transactions$',views.TransactionList.as_view(), name="transactions"),
 
     url(r'^accounts$',views.AccountList.as_view()),
 

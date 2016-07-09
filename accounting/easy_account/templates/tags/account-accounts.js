@@ -27,4 +27,12 @@ self.edit_account = function(e) {
     color: "green"
   }).replaceWith(replace);
 };
+
+self.transfer_out = function(e) {
+  return RiotControl.trigger('set-transaction-option', 'from_account', e.item.account.id);
+};
+
+self.transfer_in = function(e) {
+  return RiotControl.trigger('set-transaction-option', 'to_account', e.item.account.id);
+};
 });

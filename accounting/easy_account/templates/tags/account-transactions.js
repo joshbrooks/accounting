@@ -20,7 +20,5 @@ self.on('mount', function() {
 
 self.edit_transaction = function(e) {};
 
-self.create_transaction = function(e) {};
-
 self.select_transaction = function(e) {};
 });
