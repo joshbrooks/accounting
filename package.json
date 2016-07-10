@@ -24,6 +24,7 @@
     "font-awesome": "^4.6.3",
     "jquery": "^3.0.0",
     "jquery-form": "^3.50.0",
+    "jquery.cookie": "^1.4.1",
     "riot": "^2.5.0",
     "riot-compiler": "^2.5.2",
     "riotcontrol": "0.0.3"

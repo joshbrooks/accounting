@@ -161,9 +161,6 @@ LOCALE_PATHS = (
 # Add custom languages not provided by Django
 # LANG_INFO = dict(django.conf.locale.LANG_INFO.items() + EXTRA_LANG_INFO.items())
 django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
-for p in LOCALE_PATHS:
-    print p
-    assert os.path.exists(os.path.join(p, 'tet','LC_MESSAGES'))
 try:
     from local_settings import *
 except ImportError:

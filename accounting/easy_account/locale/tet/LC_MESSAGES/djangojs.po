@@ -20,3 +20,30 @@ msgstr ""
 #: easy_account/templates/tags/account-accounts.js:9
 msgid "transaction"
 msgstr "transacsaun"
+
+msgid "transactions"
+msgstr "transacsaun sira"
+
+msgid "Transaction"
+msgstr "Transacsaun"
+
+msgid "Transactions"
+msgstr "Transacsaun sira"
+
+msgid "credit"
+msgstr "credit"
+
+msgid "capital"
+msgstr "capital"
+
+msgid "asset"
+msgstr "asset"
+
+msgid "debit"
+msgstr "debit"
+
+msgid "liability"
+msgstr "liability"
+
+msgid "revenue"
+msgstr "revenue"

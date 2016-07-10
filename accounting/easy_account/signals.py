@@ -30,16 +30,16 @@ def set_account_balances(sender, created, instance, **kwargs):
 
     if hasattr(instance.from_account, 'capital'):
         acc = instance.from_account
-        print acc.capital.estimatedbalance
-        acc.capital.estimatedbalance -= instance.amount
-        print acc.capital.estimatedbalance
+        print acc.capital.balance
+        acc.capital.balance -= instance.amount
+        print acc.capital.balance
         acc.capital.save()
         acc.save()
 
     if hasattr(instance.to_account, 'capital'):
         acc = instance.to_account
-        print acc.capital.estimatedbalance
-        acc.capital.estimatedbalance += instance.amount
-        print acc.capital.estimatedbalance
+        print acc.capital.balance
+        acc.capital.balance += instance.amount
+        print acc.capital.balance
         acc.capital.save()
         acc.save()

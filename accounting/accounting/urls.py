@@ -25,10 +25,12 @@ from easy_account import urls as easy_account_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^', include( easy_account_urls, namespace='accounts')),
     url(r'^jsi18n/(?P<packages>\S+?)/$', javascript_catalog, name='javascript-catalog'),
     url(r'^jsi18n/$', javascript_catalog, name='javascript-catalog'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
+
 ]
 
 if 'django_js_reverse' in settings.INSTALLED_APPS:

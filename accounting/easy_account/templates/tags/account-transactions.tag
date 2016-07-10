@@ -1,7 +1,7 @@
 <account-transactions class="o-grid__cell o-grid__cell--width-60">
     <div>
         <div class="c-card c-card--higher">
-            <div class="c-card__content c-card__content--divider heading">Transactions</div>
+            <div class="c-card__content c-card__content--divider heading">{ title }</div>
             <div class="c-card__item"  each={transaction in store.transactions}>
 
                 <div class="o-grid">
@@ -34,6 +34,7 @@
 
     <script type="text/coffeescript">
         self = this
+        self.title = gettext('Transactions')
         self.store = new TransactionStore()
         window.transactionstore = self.store;
         RiotControl.addStore(self.store)

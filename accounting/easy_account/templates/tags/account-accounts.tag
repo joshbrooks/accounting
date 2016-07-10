@@ -3,7 +3,7 @@
         <div class="c-card c-card--higher" >
 
             <virtual  each={account_type in store.accounts}>
-                <div class="c-card__content c-card__content--divider heading">{ account_type }</div>
+                <div class="c-card__content c-card__content--divider heading">{ gettext(account_type) }</div>
 
                 <div class="c-card__item" each={account in store.accounts[account_type] }>
                     <div class="o-grid account-account">
@@ -42,9 +42,6 @@
         self = this
         JS_LOG_LEVEL = window.JS_LOG_LEVEL or 1
         self.on 'mount', ->
-
-          alert(gettext('transaction'))
-
           self.store = new AccountStore()
           window.accountstore = self.store;
           RiotControl.addStore(self.store)
@@ -66,10 +63,10 @@
           # TODO: Pop up a modal form with account info
 
         self.transfer_out = (e) ->
-            RiotControl.trigger('set-transaction-option', 'from_account', e.item.account.id)
+            RiotControl.trigger('set-transaction-option', 'from_account', e.item.account)
 
         self.transfer_in = (e) ->
-            RiotControl.trigger('set-transaction-option', 'to_account', e.item.account.id)
+            RiotControl.trigger('set-transaction-option', 'to_account', e.item.account)
 
     </script>
 </account-accounts>

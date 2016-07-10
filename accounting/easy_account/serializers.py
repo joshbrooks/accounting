@@ -44,10 +44,11 @@ class AccountSerializer_id_name(serializers.ModelSerializer):
         model = Account
         fields = ('id', 'name')
 
+
 class TransactionSerializer(serializers.ModelSerializer):
 
-    from_account = AccountSerializer_id_name(read_only=True)
-    to_account = AccountSerializer_id_name(read_only=True)
+    # from_account = AccountSerializer_id_name()
+     #to_account = AccountSerializer_id_name()
 
     class Meta:
         model = Transaction
