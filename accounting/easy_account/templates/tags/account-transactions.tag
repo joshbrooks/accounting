@@ -35,16 +35,15 @@
     <script type="text/coffeescript">
         self = this
         self.title = gettext('Transactions')
-        self.store = new TransactionStore()
-        window.transactionstore = self.store;
-        RiotControl.addStore(self.store)
+        self.store = window.transactionstore;
+
         self.on 'mount', ->
           RiotControl.trigger('transactions_fetch')
           self.update()
 
-          RiotControl.on 'transactions_update', () ->
-              console.log 'update'
-              self.update()
+        RiotControl.on 'transactions_update', (transactions) ->
+            self.transactions = transactions
+            self.update()
 
         self.edit_transaction = (e) -> return
         self.select_transaction = (e) -> return

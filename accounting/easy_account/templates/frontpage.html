@@ -48,8 +48,13 @@
 
 {%  block body_script %}
 <script>
+    accountstore = new AccountStore();
+    RiotControl.addStore(window.accountstore);
+    transactionstore = new TransactionStore();
+    RiotControl.addStore(window.transactionstore);
+
     riot.mount('account-accounts');
-    riot.mount('account-transactions')
-    riot.mount('create-transaction')
+    riot.mount('account-transactions');
+    riot.mount('create-transaction');
 </script>
 {%  endblock %}

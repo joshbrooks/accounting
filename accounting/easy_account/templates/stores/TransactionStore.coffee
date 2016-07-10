@@ -13,7 +13,7 @@ window.TransactionStore = () ->
     xhr = $.getJSON('/transactions?format=json')
     xhr.done () ->
       self.transactions = xhr.responseJSON
-      RiotControl.trigger('transactions_update')
+      RiotControl.trigger 'transactions_update', self.transactions
 
   self.on 'transactions_init', () ->
     console.log 'triggered transactions_init'

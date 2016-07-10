@@ -17,7 +17,7 @@
       xhr = $.getJSON('/transactions?format=json');
       return xhr.done(function() {
         self.transactions = xhr.responseJSON;
-        return RiotControl.trigger('transactions_update');
+        return RiotControl.trigger('transactions_update', self.transactions);
       });
     });
     self.on('transactions_init', function() {

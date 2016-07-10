@@ -7,21 +7,16 @@
     self.accounts = [];
     self.on('accounts_fetch', function() {
       var xhr;
-      xhr = $.getJSON('/accounts');
+      xhr = $.getJSON(Urls['accounts:accounts']());
       return xhr.done(function() {
         self.accounts = xhr.responseJSON;
-        return RiotControl.trigger('accounts_update');
+        console.log('triggering accounts_changed');
+        return self.trigger('accounts_changed', self.accounts);
       });
-    });
-    self.on('accounts_init', function() {
-      if (JS_LOG_LEVEL < 2) {
-        console.log('triggered accounts_init');
-      }
-      return self.trigger('accounts_changed', self.accounts);
     });
     return self.on('account_add', function(account, category) {
       self.accounts.category.push(account);
-      return self.trigger('accounts_changed', accounts);
+      return self.trigger('accounts_changed', self.accounts);
     });
   };
 

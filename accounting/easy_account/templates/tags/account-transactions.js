@@ -5,19 +5,16 @@ self = this;
 
 self.title = gettext('Transactions');
 
-self.store = new TransactionStore();
-
-window.transactionstore = self.store;
-
-RiotControl.addStore(self.store);
+self.store = window.transactionstore;
 
 self.on('mount', function() {
   RiotControl.trigger('transactions_fetch');
-  self.update();
-  return RiotControl.on('transactions_update', function() {
-    console.log('update');
-    return self.update();
-  });
+  return self.update();
+});
+
+RiotControl.on('transactions_update', function(transactions) {
+  self.transactions = transactions;
+  return self.update();
 });
 
 self.edit_transaction = function(e) {};
