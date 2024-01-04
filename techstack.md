@@ -1,7 +1,8 @@
 <!--
---- Readme.md Snippet without images Start ---
+&lt;--- Readme.md Snippet without images Start ---&gt;
 ## Tech Stack
 joshbrooks/accounting is built on the following main stack:
+
 - [Python](https://www.python.org) – Languages
 - [Django](https://www.djangoproject.com/) – Frameworks (Full Stack)
 - [jQuery](http://jquery.com/) – Javascript UI Libraries
@@ -11,11 +12,13 @@ joshbrooks/accounting is built on the following main stack:
 - [Riot](https://riot.js.org/) – Javascript UI Libraries
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet without images End ---
 
---- Readme.md Snippet with images Start ---
+&lt;--- Readme.md Snippet without images End ---&gt;
+
+&lt;--- Readme.md Snippet with images Start ---&gt;
 ## Tech Stack
 joshbrooks/accounting is built on the following main stack:
+
 - <img width='25' height='25' src='https://img.stackshare.io/service/993/pUBY5pVj.png' alt='Python'/> [Python](https://www.python.org) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/994/4aGjtNQv.png' alt='Django'/> [Django](https://www.djangoproject.com/) – Frameworks (Full Stack)
 - <img width='25' height='25' src='https://img.stackshare.io/service/1021/lxEKmMnB_400x400.jpg' alt='jQuery'/> [jQuery](http://jquery.com/) – Javascript UI Libraries
@@ -25,14 +28,15 @@ joshbrooks/accounting is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/2647/v9dRXi8N_400x400.png' alt='Riot'/> [Riot](https://riot.js.org/) – Javascript UI Libraries
 
 Full tech stack [here](/techstack.md)
---- Readme.md Snippet with images End ---
+
+&lt;--- Readme.md Snippet with images End ---&gt;
 -->
 <div align="center">
 
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [joshbrooks/accounting](https://github.com/joshbrooks/accounting)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|15<br/>Tools used|11/09/23 <br/>Report generated|
+|15<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -138,9 +142,9 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[django-debug-toolbar](https://pypi.org/django-debug-toolbar)|v1.4|07/10/16|joshbrooks |BSD-3-Clause|[CVE-2021-30459](https://github.com/advisories/GHSA-pghf-347x-c2gj) (High)|
-|[django-extensions](https://pypi.org/django-extensions)|v1.5.9|07/10/16|joshbrooks |MIT|N/A|
-|[djangorestframework](https://pypi.org/djangorestframework)|v3.3.3|07/10/16|joshbrooks |BSD-3-Clause|[](https://github.com/advisories/GHSA-57h7-r3q3-w57j) (Moderate)<br/>[CVE-2020-25626](https://github.com/advisories/GHSA-fx83-3ph3-9j2q) (Moderate)|
+|[django-debug-toolbar](https://pypi.org/project/django-debug-toolbar)|v1.4|07/10/16|joshbrooks |BSD-3-Clause|[CVE-2021-30459](https://github.com/advisories/GHSA-pghf-347x-c2gj) (High)|
+|[django-extensions](https://pypi.org/project/django-extensions)|v1.5.9|07/10/16|joshbrooks |MIT|N/A|
+|[djangorestframework](https://pypi.org/project/djangorestframework)|v3.3.3|07/10/16|joshbrooks |BSD-3-Clause|[](https://github.com/advisories/GHSA-57h7-r3q3-w57j) (Moderate)<br/>[CVE-2020-25626](https://github.com/advisories/GHSA-fx83-3ph3-9j2q) (Moderate)|
 
 
 ## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (2)
@@ -153,4 +157,4 @@ Full tech stack [here](/techstack.md)
 <br/>
 <div align='center'>
 
-Generated via [Stack File](https://github.com/apps/stack-file)
+Generated via [Stack File](https://github.com/marketplace/stack-file)
