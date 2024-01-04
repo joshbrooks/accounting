@@ -1,7 +1,8 @@
 repo_name: joshbrooks/accounting
 report_id: 7bffd60581114a10100c5f80851c0374
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T23:10:07+00:00'
+timestamp: '2024-01-04T15:17:00+00:00'
 requested_by: joshbrooks
 provider: github
 branch: master
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1178/slQydAMv.png
+  detection_source_url: https://github.com/joshbrooks/accounting
   detection_source: Repo Metadata
 - name: JavaScript
   description: Lightweight, interpreted, object-oriented language with first-class
@@ -26,6 +28,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source_url: https://github.com/joshbrooks/accounting
   detection_source: Repo Metadata
 - name: Python
   description: A clear and powerful object-oriented programming language, comparable
@@ -36,6 +39,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/993/pUBY5pVj.png
+  detection_source_url: https://github.com/joshbrooks/accounting
   detection_source: Repo Metadata
 - name: Bootstrap
   description: Simple and flexible HTML, CSS, and JS for popular UI components and
@@ -48,7 +52,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Front-End Frameworks
   image_url: https://img.stackshare.io/service/1101/C9QJ7V3X.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/package.json
   detection_source: package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2016-07-04 01:43:54.000000000 Z
@@ -61,6 +65,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/994/4aGjtNQv.png
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: joshbrooks
   last_updated_on: 2016-07-10 05:19:25.000000000 Z
@@ -73,7 +78,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/2647/v9dRXi8N_400x400.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/package.json
   detection_source: package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2016-07-04 01:43:54.000000000 Z
@@ -87,7 +92,7 @@ tools:
   category: Libraries
   sub_category: Javascript UI Libraries
   image_url: https://img.stackshare.io/service/1021/lxEKmMnB_400x400.jpg
-  detection_source_url: package.json
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/package.json
   detection_source: package.json
   last_updated_by: joshbrooks
   last_updated_on: 2016-07-10 05:19:25.000000000 Z
@@ -99,6 +104,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/joshbrooks/accounting
   detection_source: Repo Metadata
 - name: PyPI
   description: A repository of software for the Python programming language
@@ -108,6 +114,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Hosted Package Repository
   image_url: https://img.stackshare.io/service/12572/-RIWgodF_400x400.jpg
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: Joshua Brooks
   last_updated_on: 2016-07-02 05:38:17.000000000 Z
@@ -119,13 +126,14 @@ tools:
   category: Build, Test, Deploy
   sub_category: Front End Package Manager
   image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/package.json
   detection_source: package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2016-07-04 01:43:54.000000000 Z
 - name: django-debug-toolbar
   description: A configurable set of panels that display various debug information
     about the current request/response
-  package_url: https://pypi.org/django-debug-toolbar
+  package_url: https://pypi.org/project/django-debug-toolbar
   version: '1.4'
   license: BSD-3-Clause
   open_source: true
@@ -133,7 +141,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20671/default_d50ff54d48cd87d57b8eda5d2d945fe31fb2ac8a.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: joshbrooks
   last_updated_on: 2016-07-10 05:19:25.000000000 Z
@@ -146,7 +154,7 @@ tools:
     first_patched: 1.11.1
 - name: django-extensions
   description: Extensions for Django
-  package_url: https://pypi.org/django-extensions
+  package_url: https://pypi.org/project/django-extensions
   version: 1.5.9
   license: MIT
   open_source: true
@@ -154,13 +162,13 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/20221/default_de20d7ae2b6948b5b182b4fc08037d5f45d6d0a6.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: joshbrooks
   last_updated_on: 2016-07-10 05:19:25.000000000 Z
 - name: djangorestframework
   description: Web APIs for Django, made easy
-  package_url: https://pypi.org/djangorestframework
+  package_url: https://pypi.org/project/djangorestframework
   version: 3.3.3
   license: BSD-3-Clause
   open_source: true
@@ -168,7 +176,7 @@ tools:
   category: Libraries
   sub_category: PyPI Packages
   image_url: https://img.stackshare.io/package/19870/default_d05f6f09935776629f62e8aed365805502c14921.png
-  detection_source_url: requirements.txt
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/requirements.txt
   detection_source: requirements.txt
   last_updated_by: joshbrooks
   last_updated_on: 2016-07-10 05:19:25.000000000 Z
@@ -195,7 +203,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/15920/default_1d65e37e65b7f80761374f0202776043277d505d.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/package.json
   detection_source: package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2016-07-04 01:43:54.000000000 Z
@@ -209,7 +217,7 @@ tools:
   category: Libraries
   sub_category: npm Packages
   image_url: https://img.stackshare.io/package/16160/default_77b54a203c743d16eddb6b6390cba17218454fa0.png
-  detection_source_url: package.json
+  detection_source_url: https://github.com/joshbrooks/accounting/blob/master/package.json
   detection_source: package.json
   last_updated_by: Joshua Brooks
   last_updated_on: 2016-07-04 01:43:54.000000000 Z
